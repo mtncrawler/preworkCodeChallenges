@@ -10,8 +10,8 @@ You can select any number from the list, however your scoring will be depend on 
 
 Input Format:
 An array of integers, and the number chosen.    
-Solution  
-![screen shot](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)  
+Solution:    
+![screen shot](https://github.com/mtncrawler/preworkCodeChallenges/blob/master/screenshot.png)  
   
 ## Leap Year Calculator  
 Given a year, report if it is a leap year.
@@ -24,6 +24,8 @@ on every year that is evenly divisible by 4
 
 For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 2000 is.  
 Note: This is not a trick problem. Edge cases do not need to be taken into consideration when creating a solution.  
+Solution:    
+![screen shot](https://github.com/mtncrawler/preworkCodeChallenges/blob/master/screenshot.png)  
   
 ## Perfect Sequence  
 Problem Statement:
@@ -34,6 +36,8 @@ A perfect sequence is a sequence such that all of its elements are non-negative 
 
 Input Format:
 An array of integers (may not be sorted)  
+Solution:    
+![screen shot](https://github.com/mtncrawler/preworkCodeChallenges/blob/master/screenshot.png)  
   
 ## Sum of Rows  
 Problem Statement:
@@ -57,3 +61,5 @@ for loops are your best friend
 GetLength() is a method you should look into
 i.e. in the array above myArray.GetLength(0) is equal to 3
 myArray.GetLength(1) is equal to 5  
+Solution:    
+![screen shot](https://github.com/mtncrawler/preworkCodeChallenges/blob/master/screenshot.png)
