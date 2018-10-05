@@ -7,7 +7,8 @@ namespace codeChallenges
         static void Main(string[] args)
         {
             //Problem1();
-            Problem2();
+            //Problem2();
+            //Problem3();
         }
 
         //Problem 1: Array Max Result
@@ -76,5 +77,38 @@ namespace codeChallenges
             Console.ReadLine();
         }
 
+        //Problem 3: Perfect Sequence
+
+        static string PerfSeq(int[] sequence)
+        {
+            int sum = 0;
+            int product = 1;
+            foreach (int num in sequence)
+            {
+                sum += num;
+            }
+            foreach (int num in sequence)
+            {
+                product *= num;
+            }
+            if (Array.Exists(sequence, ele => ele > 0) && sum == product)
+            {
+                return "Yes!";
+            }
+            else
+            {
+                return "Nope!";
+            }
+        }
+        
+        static void Problem3()
+        {
+            int[] givenSeq = new int[] { 1, 2, 3 };
+            Console.WriteLine("Riddle me this, do you think the given sequence [1,2,3] is a perfect sequence?");
+            Console.Write("Press Enter to check if you are correct.");
+            Console.ReadLine();
+            Console.WriteLine(PerfSeq(givenSeq));
+            Console.ReadLine();
+        }
     }
 }
