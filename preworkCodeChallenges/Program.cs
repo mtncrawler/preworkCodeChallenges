@@ -6,20 +6,13 @@ namespace codeChallenges
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Array Max Result");
-            int[] randomArrayOutput = RandomArray();
-            Console.WriteLine("[{0}, {1}, {2}, {3}, {4}]", 
-                randomArrayOutput[0],
-                randomArrayOutput[1],
-                randomArrayOutput[2],
-                randomArrayOutput[3],
-                randomArrayOutput[4]);
-            Console.Write("Please select a number from the array: ");
-            string userValue = Console.ReadLine();
-            Console.WriteLine("Your score: " + ArrayMaxResult(randomArrayOutput, userValue));
-            Console.ReadLine();
+            Problem1();
+            Problem2();
+            Problem3();
+            Problem4();
         }
 
+        //Problem 1: Array Max Result
         static int[] RandomArray()
         {
             int[] randomNum = new int[5];
@@ -45,5 +38,102 @@ namespace codeChallenges
             return num * counter;
         }
 
+        static void Problem1()
+        {
+            Console.WriteLine("Welcome to Array Max Result");
+            int[] randomArrayOutput = RandomArray();
+            Console.WriteLine("[{0}, {1}, {2}, {3}, {4}]",
+                randomArrayOutput[0],
+                randomArrayOutput[1],
+                randomArrayOutput[2],
+                randomArrayOutput[3],
+                randomArrayOutput[4]);
+            Console.Write("Please select a number from the array: ");
+            string userValue = Console.ReadLine();
+            Console.WriteLine("Your score: " + ArrayMaxResult(randomArrayOutput, userValue));
+            Console.ReadLine();
+        }
+
+        //Problem 2: Leap Year Calendar
+
+        static string LeapYearCalculator(string userInput)
+        {
+            int year = Int32.Parse(userInput);
+            if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0)
+            {
+                return year + " is a leap year!";
+            }
+            else
+            {
+                return year + " is not a leap year.";
+            }
+        }
+
+        static void Problem2()
+        {
+            Console.WriteLine("Welcome to the Leap Year Calculator");
+            Console.Write("Please enter a year in YYYY format: ");
+            string userYear = Console.ReadLine();
+            Console.WriteLine(LeapYearCalculator(userYear));
+            Console.ReadLine();
+        }
+
+        //Problem 3: Perfect Sequence
+
+        static string PerfSeq(int[] sequence)
+        {
+            int sum = 0;
+            int product = 1;
+            foreach (int num in sequence)
+            {
+                sum += num;
+            }
+            foreach (int num in sequence)
+            {
+                product *= num;
+            }
+            if (Array.Exists(sequence, ele => ele > 0) && sum == product)
+            {
+                return "Yes!";
+            }
+            else
+            {
+                return "Nope!";
+            }
+        }
+        
+        static void Problem3()
+        {
+            int[] givenSeq = new int[] { 1, 2, 3 };
+            Console.WriteLine("Riddle me this, do you think the given sequence [1,2,3] is a perfect sequence?");
+            Console.Write("Press Enter to check if you are correct.");
+            Console.ReadLine();
+            Console.WriteLine(PerfSeq(givenSeq));
+            Console.ReadLine();
+        }
+
+        //Problem 4: Sum of Rows
+
+        static void Problem4()
+        {
+            int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
+            int rows = myArray.GetLength(0);
+            int columns = myArray.GetLength(1);
+            int[] rowSums = new int[rows];
+            int sum = 0;
+            Console.WriteLine("Welcome to the Sum of Rows");
+            for (int j = 0; j < rows; j++)
+            {
+                for (int i = 0; i < columns; i++)
+                {
+                    sum += myArray[j, i];
+                }
+                rowSums[j] = sum;
+                sum = 0;
+            }
+            Console.WriteLine("{{{0}}}", string.Join(", ", rowSums));
+            Console.ReadLine();
+
+        }
     }
 }
