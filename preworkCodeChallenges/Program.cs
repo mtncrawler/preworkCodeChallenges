@@ -6,20 +6,11 @@ namespace codeChallenges
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Array Max Result");
-            int[] randomArrayOutput = RandomArray();
-            Console.WriteLine("[{0}, {1}, {2}, {3}, {4}]", 
-                randomArrayOutput[0],
-                randomArrayOutput[1],
-                randomArrayOutput[2],
-                randomArrayOutput[3],
-                randomArrayOutput[4]);
-            Console.Write("Please select a number from the array: ");
-            string userValue = Console.ReadLine();
-            Console.WriteLine("Your score: " + ArrayMaxResult(randomArrayOutput, userValue));
-            Console.ReadLine();
+            //Problem1();
+            Problem2();
         }
 
+        //Problem 1: Array Max Result
         static int[] RandomArray()
         {
             int[] randomNum = new int[5];
@@ -43,6 +34,46 @@ namespace codeChallenges
                 }
             }
             return num * counter;
+        }
+
+        static void Problem1()
+        {
+            Console.WriteLine("Welcome to Array Max Result");
+            int[] randomArrayOutput = RandomArray();
+            Console.WriteLine("[{0}, {1}, {2}, {3}, {4}]",
+                randomArrayOutput[0],
+                randomArrayOutput[1],
+                randomArrayOutput[2],
+                randomArrayOutput[3],
+                randomArrayOutput[4]);
+            Console.Write("Please select a number from the array: ");
+            string userValue = Console.ReadLine();
+            Console.WriteLine("Your score: " + ArrayMaxResult(randomArrayOutput, userValue));
+            Console.ReadLine();
+        }
+
+        //Problem 2: Leap Year Calendar
+
+        static string LeapYearCalculator(string userInput)
+        {
+            int year = Int32.Parse(userInput);
+            if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0)
+            {
+                return year + " is a leap year!";
+            }
+            else
+            {
+                return year + " is not a leap year.";
+            }
+        }
+
+        static void Problem2()
+        {
+            Console.WriteLine("Welcome to the Leap Year Calculator");
+            Console.Write("Please enter a year in YYYY format: ");
+            string userYear = Console.ReadLine();
+            Console.WriteLine(LeapYearCalculator(userYear));
+            Console.ReadLine();
         }
 
     }
