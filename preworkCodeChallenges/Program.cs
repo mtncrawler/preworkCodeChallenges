@@ -6,9 +6,10 @@ namespace codeChallenges
     {
         static void Main(string[] args)
         {
-            //Problem1();
-            //Problem2();
-            //Problem3();
+            Problem1();
+            Problem2();
+            Problem3();
+            Problem4();
         }
 
         //Problem 1: Array Max Result
@@ -109,6 +110,30 @@ namespace codeChallenges
             Console.ReadLine();
             Console.WriteLine(PerfSeq(givenSeq));
             Console.ReadLine();
+        }
+
+        //Problem 4: Sum of Rows
+
+        static void Problem4()
+        {
+            int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
+            int rows = myArray.GetLength(0);
+            int columns = myArray.GetLength(1);
+            int[] rowSums = new int[rows];
+            int sum = 0;
+            Console.WriteLine("Welcome to the Sum of Rows");
+            for (int j = 0; j < rows; j++)
+            {
+                for (int i = 0; i < columns; i++)
+                {
+                    sum += myArray[j, i];
+                }
+                rowSums[j] = sum;
+                sum = 0;
+            }
+            Console.WriteLine("{{{0}}}", string.Join(", ", rowSums));
+            Console.ReadLine();
+
         }
     }
 }
